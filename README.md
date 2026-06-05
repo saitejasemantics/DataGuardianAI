@@ -1,111 +1,76 @@
 # 🛡️ DataGuardian AI
 
-### Autonomous AI agents that detect data issues, uncover root causes, and accelerate enterprise data reliability.
+### Multi-Agent Data Quality & Root Cause Intelligence Platform
 
-## Overview
+## Problem Statement
 
-DataGuardian AI is a Multi-Agent Data Quality & Root Cause Intelligence Platform that proactively detects data quality issues, investigates pipeline failures, identifies root causes, assesses business impact, and recommends corrective actions.
+Enterprise data teams spend significant time investigating pipeline failures, schema changes, and data quality issues. Root cause analysis is often manual, slow, and fragmented across multiple systems.
 
-Built using specialized AI agents and Microsoft Foundry intelligence concepts, the platform transforms operational data into actionable insights for data engineers, analytics teams, and business stakeholders.
+## Solution
 
----
+DataGuardian AI is a multi-agent reasoning platform that autonomously analyzes operational signals, identifies root causes, assesses business impact, and recommends corrective actions.
 
 ## Key Features
 
-✅ Pipeline Failure Detection
-
-✅ Data Quality Monitoring
-
-✅ Schema Drift Analysis
-
-✅ Root Cause Investigation
-
-✅ Business Impact Assessment
-
-✅ AI-Powered Recommendations
-
-✅ Executive Incident Summaries
-
----
+* Pipeline Failure Detection
+* Data Quality Monitoring
+* Schema Drift Detection
+* Root Cause Analysis
+* Business Impact Assessment
+* AI-Powered Recommendations
+* Executive Incident Summaries
 
 ## Agent Architecture
 
-```text
-Pipeline Agent
-        │
-        ▼
-Data Quality Agent
-        │
-        ▼
-Schema Agent
-        │
-        ▼
-Root Cause Agent
-        │
- ┌──────┴──────┐
- ▼             ▼
-Business    Recommendation
-Impact Agent    Agent
-       │
-       ▼
-Executive Summary Agent
-```
-
----
+![Architecture](docs/architecture.png)
 
 ## Technology Stack
 
-- Python
-- Pandas
-- Streamlit
-- LangGraph
-- Azure OpenAI
-- Microsoft Foundry
-- GitHub Copilot
-- GitHub Codespaces
-
----
+* Python
+* Pandas
+* Streamlit
+* GitHub Copilot
+* GitHub Codespaces
+* Azure OpenAI (planned)
+* Microsoft Foundry IQ Concepts
 
 ## Microsoft Foundry Integration
 
-DataGuardian AI aligns with Microsoft Foundry IQ principles by enabling AI agents to reason across multiple enterprise signals:
+DataGuardian AI leverages Foundry IQ principles by enabling specialized agents to reason across enterprise operational signals including pipeline logs, data quality metrics, schema metadata, and business impact indicators.
 
-- Pipeline execution logs
-- Data quality metrics
-- Schema metadata
-- Business impact indicators
+## Screenshots
 
-The platform synthesizes these signals to generate grounded root-cause analysis and remediation recommendations.
+### Pipeline Agent
 
----
+![Pipeline Agent](docs/screenshots/pipeline_agent.png)
 
-## Sample Root Cause Analysis
+### Data Quality Agent
 
-Input Signals:
+![Data Quality Agent](docs/screenshots/dq_agent.png)
 
-- Pipeline Failure
-- Schema Change Detected
-- Data Completeness Drop
+### Schema Agent
 
-AI Reasoning:
+![Schema Agent](docs/screenshots/schema_agent.png)
 
-Schema Drift → HIGH Confidence
+### Root Cause Agent
 
-Business Impact:
+![Root Cause Agent](docs/screenshots/rootcause_agent.png)
 
-Revenue Dashboard affected
+## Current Agent Workflow
 
-32,000 records impacted
+Pipeline Agent → Data Quality Agent → Schema Agent → Root Cause Agent → Recommendation Agent → Executive Summary Agent
 
-Recommendation:
+## Future Enhancements
 
-Implement schema validation before pipeline execution.
-
----
+* Azure OpenAI Integration
+* LangGraph Agent Orchestration
+* Microsoft Fabric Integration
+* Real-Time Incident Monitoring
+* Natural Language Chat Interface
 
 ## Challenge Track
 
 Agent League Hackathon
 
-Reasoning Agents
-Enterprise Agents
+* Reasoning Agents
+* Enterprise Agents
