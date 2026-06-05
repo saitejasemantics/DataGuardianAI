@@ -1,0 +1,4 @@
+pipeline_id,pipeline_name,status,error_message
+1,Customer_Load,FAILED,Column customer_type not found
+2,Orders_Load,SUCCESS,
+3,Revenue_Load,FAILED,Schema mismatch
