@@ -11,6 +11,12 @@ st.subheader(
     "Multi-Agent Data Quality & Root Cause Intelligence Platform"
 )
 
+st.caption(
+    "Autonomous AI agents that detect data issues, uncover root causes, and accelerate enterprise data reliability."
+)
+
+st.divider()
+
 st.write(
-    "Autonomous AI agents for data quality monitoring, root cause analysis, and remediation recommendations."
+    "Welcome to DataGuardian AI."
 )
