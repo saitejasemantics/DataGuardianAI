@@ -1,0 +1,4 @@
+table_name,completeness_percent,null_rate
+customer,62,38
+orders,98,1
+revenue,70,25

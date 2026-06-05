@@ -1,0 +1,3 @@
+table_name,column_name,change_type
+customer,customer_type,RENAME
+revenue,sales_amt,DATATYPE_CHANGE
