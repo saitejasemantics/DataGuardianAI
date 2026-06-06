@@ -2,31 +2,42 @@
 
 ### Multi-Agent Data Quality & Root Cause Intelligence Platform
 
-🚧 Hackathon Project – Active Development
+🚀 Microsoft Agent League Hackathon Submission
 
-✅ Multi-Agent Architecture
-✅ Root Cause Reasoning Engine
-✅ Documentation & Architecture Diagram
-✅ Streamlit Dashboard
-🚧 Azure OpenAI Integration
+**Primary Track:** Reasoning Agents
+**Secondary Track:** Enterprise Agents
 
 ---
 
 ## Problem Statement
 
-Enterprise data teams spend significant time investigating pipeline failures, schema changes, and data quality issues. Root cause analysis is often manual, slow, and fragmented across multiple systems.
+Enterprise data teams spend significant time investigating pipeline failures, schema changes, and data quality issues.
 
-## Why It Matters
+Traditional monitoring tools identify symptoms but often fail to explain:
 
-Data incidents can disrupt analytics, reporting, and business decisions. Traditional monitoring tools identify symptoms but often fail to explain why failures occur. DataGuardian AI accelerates investigation by combining specialized agents that collaborate to uncover root causes, assess impact, and recommend remediation actions.
+* Why an incident occurred
+* What business assets are affected
+* What actions should be taken
+
+As a result, root cause analysis becomes manual, slow, and reactive.
 
 ---
 
 ## Solution
 
-DataGuardian AI is a multi-agent reasoning platform that autonomously analyzes operational signals, identifies root causes, assesses business impact, and recommends corrective actions.
+DataGuardian AI is a Multi-Agent Reasoning Platform that autonomously investigates enterprise data incidents.
 
-The platform simulates how enterprise AI agents collaborate to investigate incidents and provide actionable intelligence for data engineers, analytics teams, and business stakeholders.
+Specialized AI agents collaborate to:
+
+* Detect operational failures
+* Analyze data quality issues
+* Identify schema drift
+* Determine root causes
+* Assess business impact
+* Recommend corrective actions
+* Generate executive summaries
+
+The platform demonstrates explainable, multi-step reasoning across enterprise operational data.
 
 ---
 
@@ -40,6 +51,7 @@ The platform simulates how enterprise AI agents collaborate to investigate incid
 * AI-Powered Recommendations
 * Executive Incident Summaries
 * Multi-Agent Collaboration
+* Explainable AI Reasoning
 * Enterprise Incident Intelligence
 
 ---
@@ -48,51 +60,163 @@ The platform simulates how enterprise AI agents collaborate to investigate incid
 
 ![Architecture](docs/architecture.png)
 
-### Agent Workflow
+---
 
-Pipeline Agent → Data Quality Agent → Schema Agent → Root Cause Agent → Business Impact Agent → Recommendation Agent → Executive Summary Agent
+## Multi-Agent Reasoning Pattern
+
+DataGuardian AI follows a Role-Based Multi-Agent Reasoning Architecture.
+
+Each agent specializes in a specific responsibility and collaborates with downstream agents to progressively refine the investigation.
+
+### Agent Responsibilities
+
+| Agent                 | Responsibility                                   |
+| --------------------- | ------------------------------------------------ |
+| Pipeline Agent        | Detects failed pipeline executions               |
+| Data Quality Agent    | Identifies completeness and null-rate issues     |
+| Schema Agent          | Detects schema drift and metadata changes        |
+| Root Cause Agent      | Correlates findings and determines likely causes |
+| Business Impact Agent | Evaluates affected business assets and records   |
+| Recommendation Agent  | Generates remediation actions                    |
+| Executive Agent       | Produces executive-level incident summaries      |
+
+This approach enables explainable decision-making rather than isolated anomaly detection.
 
 ---
 
-## Demo Flow
+## Agent Orchestration
 
-1. Pipeline Agent analyzes failed pipeline executions.
-2. Data Quality Agent evaluates completeness and null-rate metrics.
-3. Schema Agent detects structural changes in source systems.
-4. Root Cause Agent correlates findings and identifies likely causes.
-5. Business Impact Agent evaluates affected dashboards and records.
-6. Recommendation Agent suggests remediation actions.
-7. Executive Summary Agent generates a concise incident report.
+DataGuardian AI orchestrates multiple specialized agents through a structured reasoning workflow.
 
----
+Pipeline Agent
+↓
+Data Quality Agent
+↓
+Schema Agent
+↓
+Root Cause Agent
+↓
+Business Impact Agent
+↓
+Recommendation Agent
+↓
+Executive Agent
 
-## Technology Stack
-
-* Python
-* Pandas
-* Streamlit
-* GitHub Copilot
-* GitHub Codespaces
-* Azure OpenAI (Planned)
-* Microsoft Foundry IQ Concepts
-* LangGraph (Planned)
+Each agent contributes evidence that is passed to the next stage, enabling multi-step reasoning and grounded decision making.
 
 ---
 
-## Microsoft Foundry Integration
+## Investigation Workflow
 
-DataGuardian AI is designed around Microsoft IQ principles and can be integrated with Azure AI Foundry to power enterprise-grade reasoning workflows.
+### Step 1 – Pipeline Analysis
 
-The platform uses specialized agents to analyze:
+Pipeline Agent identifies failed pipeline executions and operational anomalies.
+
+### Step 2 – Data Quality Analysis
+
+Data Quality Agent evaluates completeness, null rates, and quality degradation.
+
+### Step 3 – Schema Analysis
+
+Schema Agent detects structural changes, schema drift, and metadata inconsistencies.
+
+### Step 4 – Root Cause Reasoning
+
+Root Cause Agent correlates findings from all agents and identifies likely causes with confidence levels.
+
+### Step 5 – Business Impact Assessment
+
+Business Impact Agent determines impacted dashboards, datasets, and affected records.
+
+### Step 6 – Recommendation Generation
+
+Recommendation Agent generates corrective actions based on identified root causes.
+
+### Step 7 – Executive Summary
+
+Executive Agent produces concise summaries for leadership and operations teams.
+
+---
+
+## Microsoft Fabric IQ Alignment
+
+DataGuardian AI aligns with Microsoft Fabric IQ principles by reasoning over enterprise business concepts rather than isolated technical events.
+
+### Core Business Entities
+
+* Pipeline
+* Dataset
+* Data Quality Rule
+* Schema Change
+* Incident
+* Business Dashboard
+* Recommendation
+
+### Semantic Relationships
+
+Pipeline → Dataset
+
+Dataset → Business Dashboard
+
+Schema Change → Incident
+
+Data Quality Failure → Incident
+
+Incident → Recommendation
+
+Business Impact → Executive Summary
+
+By modeling relationships between operational signals and business outcomes, DataGuardian AI demonstrates semantic reasoning aligned with Microsoft Fabric IQ concepts.
+
+---
+
+## Microsoft IQ Integration
+
+DataGuardian AI leverages Microsoft IQ concepts to enable intelligent reasoning over enterprise operational data.
+
+The platform synthesizes signals from:
 
 * Pipeline execution logs
 * Data quality metrics
 * Schema metadata
 * Business impact indicators
 
-These signals are synthesized by the Root Cause Agent to generate grounded explanations, confidence scores, remediation recommendations, and executive summaries.
+These signals are combined by the Root Cause Agent to produce:
 
-This approach aligns with Foundry IQ's vision of enabling AI systems to reason over enterprise operational data rather than relying on isolated signals.
+* Grounded explanations
+* Confidence scoring
+* Impact assessments
+* Remediation recommendations
+
+This approach reflects Microsoft's vision for enterprise reasoning systems powered by connected organizational intelligence.
+
+---
+
+## Technology Stack
+
+### Development
+
+* Python
+* Pandas
+* Streamlit
+
+### AI & Agent Framework
+
+* Multi-Agent Architecture
+* Agent Orchestration
+* Rule-Based Reasoning Engine
+
+### Development Tools
+
+* GitHub Copilot
+* GitHub Codespaces
+* GitHub
+
+### Microsoft Technologies
+
+* Microsoft Fabric IQ Concepts
+* Azure AI Foundry (Future Integration)
+* Microsoft 365 Copilot (Future Integration)
 
 ---
 
@@ -102,11 +226,18 @@ GitHub Copilot was used throughout the development lifecycle to:
 
 * Accelerate agent implementation
 * Generate test cases and validation logic
+* Improve code quality
 * Refactor Python modules
-* Improve documentation quality
+* Generate documentation
 * Assist with architecture design and workflow orchestration
 
-Copilot enabled rapid prototyping and iteration while maintaining code quality and development velocity.
+Copilot significantly reduced development time while improving productivity and consistency.
+
+---
+
+## Dashboard Preview
+
+![Dashboard](docs/screenshots/dashboard.png)
 
 ---
 
@@ -132,58 +263,96 @@ Copilot enabled rapid prototyping and iteration while maintaining code quality a
 
 ## Sample Investigation Result
 
-### Root Cause Analysis
-
-**Detected Issues**
+### Detected Issues
 
 * Pipeline Failure
-* Schema Change Detected
-* Data Completeness Drop
+* Schema Drift
+* Data Quality Degradation
 
-**AI Reasoning**
+### Root Cause Analysis
 
-Root Cause: Schema Drift
+Primary Cause: Schema Drift
 Confidence: HIGH
 
-Secondary Finding: Data Quality Degradation
+Secondary Cause: Data Quality Degradation
 Confidence: MEDIUM
 
-**Business Impact**
+### Business Impact
 
-* Revenue Dashboard affected
-* 32,000 records impacted
+Affected Assets:
 
-**Recommendation**
+* Revenue Dashboard
+* Customer Dashboard
+
+Affected Records:
+
+* 47,000+
+
+### Recommendations
 
 * Implement schema validation before pipeline execution
-* Add automated data quality monitoring and alerting
+* Add automated data quality monitoring
+* Configure proactive pipeline alerting
 
 ---
-### Streamlit Dashboard
 
-![Dashboard](docs/screenshots/dashboard.jpeg)
+## Business Value
+
+DataGuardian AI helps organizations:
+
+* Reduce incident investigation time
+* Improve data reliability
+* Increase trust in analytics
+* Minimize operational disruptions
+* Enable proactive data operations
+* Accelerate root cause analysis
+
+---
 
 ## Future Enhancements
 
 * Azure OpenAI Integration
 * LangGraph Agent Orchestration
 * Microsoft Fabric Integration
+* Microsoft Teams Incident Notifications
 * Real-Time Incident Monitoring
-* Natural Language Chat Interface
 * Predictive Incident Detection
 * Agent Memory and Learning
 
 ---
 
-## Challenge Track
+## Challenge Alignment
 
-### Agent League Hackathon
+### Reasoning Agents
 
-* Reasoning Agents
-* Enterprise Agents
+✅ Multi-Agent Collaboration
+
+✅ Multi-Step Reasoning
+
+✅ Explainable Decision Making
+
+✅ Agent Orchestration
+
+✅ Enterprise Problem Solving
+
+### Enterprise Agents
+
+✅ Enterprise Data Operations Use Case
+
+✅ Business Impact Intelligence
+
+✅ Executive Reporting
+
+✅ Microsoft IQ Alignment
 
 ---
 
 ## Author
 
-Built for the Microsoft Agent League Hackathon using AI-assisted development with GitHub Copilot and Microsoft AI technologies.
+Built for the Microsoft Agent League Hackathon using GitHub Copilot, GitHub Codespaces, and Microsoft AI technologies.
+
+**Project:** DataGuardian AI
+
+**Category:** Multi-Agent Reasoning Platform
+
+**Focus:** Enterprise Data Reliability & Root Cause Intelligence
