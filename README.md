@@ -237,7 +237,7 @@ Copilot significantly reduced development time while improving productivity and 
 
 ## Dashboard Preview
 
-![Dashboard](docs/screenshots/dashboard.png)
+![Dashboard](docs/screenshots/dashboard.jpeg)
 
 ---
 
