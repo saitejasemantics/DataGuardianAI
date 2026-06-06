@@ -1,5 +1,6 @@
 import sys
 from pathlib import Path
+import pandas as pd
 
 # Fix import issue when running Streamlit
 project_root = Path(__file__).resolve().parent.parent
@@ -11,6 +12,10 @@ from agents.pipeline_agent import PipelineAgent
 from agents.dq_agent import DataQualityAgent
 from agents.schema_agent import SchemaAgent
 from agents.rootcause_agent import RootCauseAgent
+
+from agents.business_impact_agent import BusinessImpactAgent
+from agents.recommendation_agent import RecommendationAgent
+from agents.executive_agent import ExecutiveAgent
 
 # --------------------------------------------------
 # Page Configuration
@@ -66,6 +71,14 @@ schema_agent = SchemaAgent(
 
 root_agent = RootCauseAgent()
 
+business_agent = BusinessImpactAgent(
+    "data/business_impact.csv"
+)
+
+recommendation_agent = RecommendationAgent()
+
+executive_agent = ExecutiveAgent()
+
 # --------------------------------------------------
 # Execute Investigation
 # --------------------------------------------------
@@ -82,6 +95,18 @@ root_results = root_agent.analyze(
     schema_results
 )
 
+business_results = business_agent.assess()
+
+recommendations = recommendation_agent.recommend(
+    root_results
+)
+
+executive_summary = executive_agent.summarize(
+    root_results,
+    business_results,
+    recommendations
+)
+
 # --------------------------------------------------
 # Main Header
 # --------------------------------------------------
@@ -94,7 +119,7 @@ st.markdown(
 
     Autonomous AI agents that detect data issues,
     investigate failures, identify root causes,
-    and recommend corrective actions.
+    assess business impact, and recommend corrective actions.
     """
 )
 
@@ -136,17 +161,26 @@ with left_col:
 
     st.subheader("🔍 Pipeline Findings")
 
-    st.json(pipeline_results)
+    st.dataframe(
+        pd.DataFrame(pipeline_results),
+        use_container_width=True
+    )
 
     st.subheader("📊 Data Quality Findings")
 
-    st.json(dq_results)
+    st.dataframe(
+        pd.DataFrame(dq_results),
+        use_container_width=True
+    )
 
 with right_col:
 
     st.subheader("🧩 Schema Findings")
 
-    st.json(schema_results)
+    st.dataframe(
+        pd.DataFrame(schema_results),
+        use_container_width=True
+    )
 
     st.subheader("🚨 Root Cause Analysis")
 
@@ -167,6 +201,58 @@ with right_col:
             )
 
 # --------------------------------------------------
+# Business Impact
+# --------------------------------------------------
+
+st.divider()
+
+st.subheader("📈 Business Impact Analysis")
+
+st.dataframe(
+    pd.DataFrame(business_results),
+    use_container_width=True
+)
+
+# --------------------------------------------------
+# Recommendations
+# --------------------------------------------------
+
+st.divider()
+
+st.subheader("💡 AI Recommendations")
+
+for rec in recommendations:
+    st.success(rec)
+
+# --------------------------------------------------
+# Executive Metrics
+# --------------------------------------------------
+
+st.divider()
+
+st.subheader("📊 Executive Metrics")
+
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.metric(
+        "Incidents",
+        executive_summary["incident_count"]
+    )
+
+with col2:
+    st.metric(
+        "Business Impacts",
+        executive_summary["business_impacts"]
+    )
+
+with col3:
+    st.metric(
+        "Recommendations",
+        executive_summary["recommendations"]
+    )
+
+# --------------------------------------------------
 # Executive Summary
 # --------------------------------------------------
 
@@ -184,6 +270,11 @@ st.success(
     • Data Quality degradation observed
     • Pipeline execution failures identified
 
+    Business Impact:
+    • Revenue Dashboard affected
+    • Customer Dashboard impacted
+    • 47,000+ records potentially affected
+
     Recommended Actions:
     • Implement schema validation checks
     • Add automated data quality monitoring
@@ -197,11 +288,27 @@ st.success(
 )
 
 # --------------------------------------------------
+# Agent Workflow
+# --------------------------------------------------
+
+st.divider()
+
+st.subheader("🤖 Multi-Agent Workflow")
+
+st.info(
+    """
+    Pipeline Agent → Data Quality Agent → Schema Agent
+    → Root Cause Agent → Business Impact Agent
+    → Recommendation Agent → Executive Summary Agent
+    """
+)
+
+# --------------------------------------------------
 # Footer
 # --------------------------------------------------
 
 st.divider()
 
 st.caption(
-    "Built for Microsoft Agent League Hackathon | DataGuardian AI"
+    "Built for Microsoft Agent League Hackathon | DataGuardian AI v1.0"
 )

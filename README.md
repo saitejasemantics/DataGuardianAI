@@ -161,9 +161,7 @@ Confidence: MEDIUM
 ---
 ### Streamlit Dashboard
 
-![Dashboard](docs/screenshots/dashboard.png)
-![Dashboard](docs/screenshots/dashboard_0.1.png)
-![Dashboard](docs/screenshots/dashboard_0.2.png)
+![Dashboard](docs/screenshots/dashboard.jpeg)
 
 ## Future Enhancements
 
