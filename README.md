@@ -7,7 +7,7 @@
 ✅ Multi-Agent Architecture
 ✅ Root Cause Reasoning Engine
 ✅ Documentation & Architecture Diagram
-🚧 Streamlit Dashboard
+✅ Streamlit Dashboard
 🚧 Azure OpenAI Integration
 
 ---
@@ -159,6 +159,11 @@ Confidence: MEDIUM
 * Add automated data quality monitoring and alerting
 
 ---
+### Streamlit Dashboard
+
+![Dashboard](docs/screenshots/dashboard.png)
+![Dashboard](docs/screenshots/dashboard_0.1.png)
+![Dashboard](docs/screenshots/dashboard_0.2.png)
 
 ## Future Enhancements
 
